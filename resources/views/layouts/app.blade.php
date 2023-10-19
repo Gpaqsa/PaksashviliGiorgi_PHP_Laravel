@@ -12,7 +12,7 @@
     @stack('css')
 </head>
 
-<body>
+<body class="bg-dark">
     <div class="container">
         @yield('content')
     </div>

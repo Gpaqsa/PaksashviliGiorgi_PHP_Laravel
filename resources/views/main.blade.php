@@ -4,19 +4,25 @@
 
 
 @section('content')
-<h1>Quiz App</h1>
+<h1 class="text-white bg-dark">Quiz App</h1>
 <ul class="quiz-list-group">
     @foreach ($quizzes as $quiz)
-    <li class="quiz-list-group-item">
+    <br />
+    <br />
+    <li class="list-group-item @if({{ $quiz['status'] == 'active' }}) text-success @endif list-unstyled ">
         {{ $quiz['name'] }}
+        <br />
+        <br />
         <span class="float-right"> Status: {{ $quiz['status'] }}</span>
-        <img src="{{ $quiz['image'] }}" alt="image" class="img-fluid img-thumbnail rounded" />
+        <br />
+        <br />
+        <img src="{{ $quiz['image'] }}" alt="image" class="img-fluid img-thumbnail rounded w-25" />
     </li>
     @endforeach
 </ul>
 <footer>
     <div class="mt-4">
-        <h2>Subscribe to Us</h2>
+        <h2 class="text-white bg-dark">Subscribe to Us</h2>
         <form action="{{ route('subscribe') }}" method="POST">
             @csrf
             <div>
